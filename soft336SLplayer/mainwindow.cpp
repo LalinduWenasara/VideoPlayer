@@ -12,12 +12,18 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     mymediaPLayer= new QMediaPlayer(this);
+    myVideowidget= new QVideoWidget(this);
+
+   mymediaPLayer->setVideoOutput(myVideowidget);
+   ui->verticalLayout->insertWidget(0,myVideowidget);
+
     connect(mymediaPLayer, &QMediaPlayer::positionChanged, [&](qint64 pos){
      ui->playProgress->setValue(pos);
     });
     connect(mymediaPLayer, &QMediaPlayer::durationChanged, [&](qint64 pos){
      ui->playProgress->setMaximum(pos);
     });
+
 
 }
 
@@ -30,7 +36,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_playBtn_clicked()
 {
 
-    QMediaPlayer* player=new QMediaPlayer;
+  QMediaPlayer* player=new QMediaPlayer;
         QVideoWidget* videowidget=new QVideoWidget;
 
         player->setVideoOutput(videowidget);

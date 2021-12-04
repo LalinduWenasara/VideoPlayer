@@ -12,7 +12,7 @@ QT_END_NAMESPACE
 
 
 class QMediaPlayer;//define a class name Qmediaplayer
-
+class QVideoWidget;
 
 
 class MainWindow : public QMainWindow
@@ -41,5 +41,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *mymediaPLayer;
+    QVideoWidget *myVideowidget;
 };
 #endif // MAINWINDOW_H
