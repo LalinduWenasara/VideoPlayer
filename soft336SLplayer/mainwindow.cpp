@@ -3,6 +3,7 @@
 
 #include <QMediaPlayer>
 #include <QFileDialog>
+#include <QVideoWidget>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -28,6 +29,15 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_playBtn_clicked()
 {
+
+    QMediaPlayer* player=new QMediaPlayer;
+        QVideoWidget* videowidget=new QVideoWidget;
+
+        player->setVideoOutput(videowidget);
+        player->setMedia(QUrl::fromLocalFile("C:/Users/lalin/Downloads/ʜawkeye.mkv"));
+        videowidget->setGeometry(100,100,300,400);
+        videowidget->show();
+        player->play();
 
 
 }
