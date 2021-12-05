@@ -38,6 +38,10 @@ private slots:
 
     void on_volumeSdr_valueChanged(int value);
 
+    void on_positionSdr_valueChanged(int value);
+
+    void on_positionSdr_sliderMoved(int position);
+
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *mymediaPLayer;

@@ -6,19 +6,25 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>788</width>
-    <height>626</height>
+    <width>1066</width>
+    <height>797</height>
    </rect>
+  </property>
+  <property name="acceptDrops">
+   <bool>false</bool>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="playBtn">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>110</y>
+      <x>480</x>
+      <y>710</y>
       <width>101</width>
       <height>41</height>
      </rect>
@@ -30,10 +36,10 @@
    <widget class="QProgressBar" name="vprogress">
     <property name="geometry">
      <rect>
-      <x>730</x>
-      <y>390</y>
-      <width>31</width>
-      <height>171</height>
+      <x>920</x>
+      <y>680</y>
+      <width>111</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="palette">
@@ -92,9 +98,9 @@
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>470</y>
-      <width>341</width>
+      <x>30</x>
+      <y>660</y>
+      <width>430</width>
       <height>71</height>
      </rect>
     </property>
@@ -139,9 +145,9 @@
    <widget class="QSlider" name="volumeSdr">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>390</y>
-      <width>160</width>
+      <x>670</x>
+      <y>650</y>
+      <width>371</width>
       <height>16</height>
      </rect>
     </property>
@@ -152,9 +158,9 @@
    <widget class="QProgressBar" name="playProgress">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>250</y>
-      <width>751</width>
+      <x>700</x>
+      <y>720</y>
+      <width>131</width>
       <height>23</height>
      </rect>
     </property>
@@ -165,13 +171,39 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>20</y>
-      <width>371</width>
-      <height>201</height>
+      <x>10</x>
+      <y>10</y>
+      <width>1041</width>
+      <height>631</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout"/>
+   </widget>
+   <widget class="QSlider" name="verticalSlider">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>670</y>
+      <width>31</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="positionSdr">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>680</y>
+      <width>401</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -179,7 +211,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>788</width>
+     <width>1066</width>
      <height>20</height>
     </rect>
    </property>

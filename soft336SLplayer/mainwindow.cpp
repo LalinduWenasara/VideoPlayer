@@ -4,7 +4,7 @@
 #include <QMediaPlayer>
 #include <QFileDialog>
 #include <QVideoWidget>
-
+int dur1;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -15,15 +15,20 @@ MainWindow::MainWindow(QWidget *parent)
     myVideowidget= new QVideoWidget(this);
 
    mymediaPLayer->setVideoOutput(myVideowidget);
+   myVideowidget->setGeometry(100,100,300,400);
    ui->verticalLayout->insertWidget(0,myVideowidget);
 
     connect(mymediaPLayer, &QMediaPlayer::positionChanged, [&](qint64 pos){
      ui->playProgress->setValue(pos);
     });
-    connect(mymediaPLayer, &QMediaPlayer::durationChanged, [&](qint64 pos){
-     ui->playProgress->setMaximum(pos);
-    });
+    connect(mymediaPLayer, &QMediaPlayer::durationChanged, [&](qint64 durrr){
+     ui->playProgress->setMaximum(durrr);
 
+     dur1=durrr;
+    });
+    /*connect(mymediaPLayer, &QMediaPlayer::durationChanged, [&](qint64 r){
+     ui->positionSdr->setValue(r);
+    });*/
 
 }
 
@@ -100,5 +105,17 @@ void MainWindow::on_volumeSdr_valueChanged(int value)
 {
 
    mymediaPLayer->setVolume(value);
+}
+
+
+void MainWindow::on_positionSdr_valueChanged(int value)
+{
+    mymediaPLayer->setPosition(dur1/value);
+}
+
+
+void MainWindow::on_positionSdr_sliderMoved(int position)
+{
+    mymediaPLayer->setPosition(position);
 }
 
