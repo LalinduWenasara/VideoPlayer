@@ -40,7 +40,7 @@ private slots:
 
     void on_positionSdr_valueChanged(int value);
 
-    void on_positionSdr_sliderMoved(int position);
+
 
 private:
     Ui::MainWindow *ui;

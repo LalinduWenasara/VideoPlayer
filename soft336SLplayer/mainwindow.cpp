@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include <iostream>
 #include <QMediaPlayer>
 #include <QFileDialog>
 #include <QVideoWidget>
@@ -29,6 +29,7 @@ MainWindow::MainWindow(QWidget *parent)
     /*connect(mymediaPLayer, &QMediaPlayer::durationChanged, [&](qint64 r){
      ui->positionSdr->setValue(r);
     });*/
+
 
 }
 
@@ -110,12 +111,10 @@ void MainWindow::on_volumeSdr_valueChanged(int value)
 
 void MainWindow::on_positionSdr_valueChanged(int value)
 {
-    mymediaPLayer->setPosition(dur1/value);
+    int x=100-value;
+    int y=dur1/x;
+    mymediaPLayer->setPosition(dur1/x);
+    std::cout <<dur1<<"dur"<< value<<"val"<<y<< std::endl;
 }
 
-
-void MainWindow::on_positionSdr_sliderMoved(int position)
-{
-    mymediaPLayer->setPosition(position);
-}
 
