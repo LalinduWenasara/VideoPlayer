@@ -36,11 +36,12 @@ private slots:
 
     void on_muteBtn_clicked();
 
-    void on_volumeSdr_valueChanged(int value);
 
     void on_positionSdr_valueChanged(int value);
 
+    void on_volumeVerticalSlider_valueChanged(int value);
 
+    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;

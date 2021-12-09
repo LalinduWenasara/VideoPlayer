@@ -4,7 +4,11 @@
 #include <QMediaPlayer>
 #include <QFileDialog>
 #include <QVideoWidget>
+#include <QKeyEvent>
+#include <QMouseEvent>
+
 int dur1;
+bool f1;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -63,7 +67,7 @@ void MainWindow::on_openBtn_clicked()
           return;
       }
       mymediaPLayer->setMedia(QUrl::fromLocalFile(fname));
-      mymediaPLayer->setVolume(ui->volumeSdr->value());
+      mymediaPLayer->setVolume(ui->volumeVerticalSlider->value());
       on_playBtn2_clicked();
 
 }
@@ -102,19 +106,37 @@ void MainWindow::on_muteBtn_clicked()
 }
 
 
-void MainWindow::on_volumeSdr_valueChanged(int value)
-{
-
-   mymediaPLayer->setVolume(value);
-}
-
 
 void MainWindow::on_positionSdr_valueChanged(int value)
 {
-    int x=100-value;
-    int y=dur1/x;
-    mymediaPLayer->setPosition(dur1/x);
-    std::cout <<dur1<<"dur"<< value<<"val"<<y<< std::endl;
+
+    mymediaPLayer->setPosition(mymediaPLayer->duration()/100*value);
+
 }
 
 
+
+
+
+void MainWindow::on_volumeVerticalSlider_valueChanged(int value)
+{
+    mymediaPLayer->setVolume(value);
+}
+
+
+
+void MainWindow::on_pushButton_clicked()
+{
+    myVideowidget->setFullScreen(true);
+    f1=true;
+}
+
+/*
+void MainWindow::keyPressEvent( QKeyEvent * event )
+{
+    if( event->key() == Qt::Key_A )
+    {
+        // do your stuff here
+    }
+}
+*/
