@@ -24,16 +24,26 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(mymediaPLayer, &QMediaPlayer::positionChanged, [&](qint64 pos){
      ui->playProgress->setValue(pos);
+
     });
     connect(mymediaPLayer, &QMediaPlayer::durationChanged, [&](qint64 durrr){
      ui->playProgress->setMaximum(durrr);
 
-     dur1=durrr;
-    });
-    /*connect(mymediaPLayer, &QMediaPlayer::durationChanged, [&](qint64 r){
-     ui->positionSdr->setValue(r);
-    });*/
 
+     dur1=durrr;
+   /*
+
+     connect(this->mediaPlayer, &QMediaPlayer::durationChanged, this->currentContentSlider, &QSlider::setMaximum);
+     connect(this->mediaPlayer, &QMediaPlayer::positionChanged, this, &MainWindow::positionChanged);
+     connect(this->currentContentSlider, &QSlider::sliderMoved, this->mediaPlayer, &QMediaPlayer::setPosition);
+
+    */
+
+    });
+  /*  connect(mymediaPLayer, &QMediaPlayer::durationChanged, [&](qint64 r){
+     ui->positionSdr->setValue(r);
+    });
+*/
 
 }
 
@@ -57,6 +67,12 @@ void MainWindow::on_playBtn_clicked()
 
 
 }
+
+
+
+
+
+
 
 
 void MainWindow::on_openBtn_clicked()
@@ -128,7 +144,7 @@ void MainWindow::on_volumeVerticalSlider_valueChanged(int value)
 void MainWindow::on_pushButton_clicked()
 {
     myVideowidget->setFullScreen(true);
-    f1=true;
+   // f1=true;
 }
 
 /*
@@ -140,3 +156,9 @@ void MainWindow::keyPressEvent( QKeyEvent * event )
     }
 }
 */
+void MainWindow::mouseDoubleClickEvent(QMouseEvent* )
+{
+
+     myVideowidget->setFullScreen(false);
+
+}

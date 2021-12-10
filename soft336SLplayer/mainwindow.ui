@@ -21,83 +21,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="3" column="5" rowspan="2">
-     <widget class="QSlider" name="volumeVerticalSlider">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="2" colspan="3">
-     <widget class="QSlider" name="positionSdr">
-      <property name="minimum">
-       <number>0</number>
-      </property>
-      <property name="maximum">
-       <number>99</number>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="4">
-     <widget class="QProgressBar" name="playProgress">
-      <property name="value">
-       <number>0</number>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0" rowspan="2" colspan="7">
-     <layout class="QVBoxLayout" name="verticalLayout"/>
-    </item>
-    <item row="4" column="2">
-     <widget class="QPushButton" name="playBtn">
-      <property name="text">
-       <string>VIDEO</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0" rowspan="2">
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QPushButton" name="openBtn">
-        <property name="text">
-         <string>OPEN</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="playBtn2">
-        <property name="text">
-         <string>PLAY</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="stopBtn">
-        <property name="text">
-         <string>STOP</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pauseBtn">
-        <property name="text">
-         <string>PAUSE</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="muteBtn">
-        <property name="text">
-         <string>MUTE</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="3" column="6" rowspan="2">
+    <item row="3" column="7" rowspan="2">
      <widget class="QProgressBar" name="vprogress">
       <property name="palette">
        <palette>
@@ -153,10 +77,86 @@
       </property>
      </widget>
     </item>
-    <item row="4" column="3">
+    <item row="3" column="6" rowspan="2">
+     <widget class="QSlider" name="volumeVerticalSlider">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="4">
      <widget class="QPushButton" name="pushButton">
       <property name="text">
        <string>Full Screen</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2" colspan="4">
+     <widget class="QSlider" name="positionSdr">
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>99</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
+     <widget class="QPushButton" name="playBtn">
+      <property name="text">
+       <string>VIDEO</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0" rowspan="2">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="openBtn">
+        <property name="text">
+         <string>OPEN</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="playBtn2">
+        <property name="text">
+         <string>PLAY</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="stopBtn">
+        <property name="text">
+         <string>STOP</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pauseBtn">
+        <property name="text">
+         <string>PAUSE</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="muteBtn">
+        <property name="text">
+         <string>MUTE</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="0" rowspan="2" colspan="8">
+     <layout class="QVBoxLayout" name="verticalLayout"/>
+    </item>
+    <item row="4" column="3">
+     <widget class="QProgressBar" name="playProgress">
+      <property name="value">
+       <number>0</number>
       </property>
      </widget>
     </item>

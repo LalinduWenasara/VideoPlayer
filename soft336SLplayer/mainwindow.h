@@ -42,6 +42,7 @@ private slots:
     void on_volumeVerticalSlider_valueChanged(int value);
 
     void on_pushButton_clicked();
+    void mouseDoubleClickEvent(QMouseEvent* e);
 
 private:
     Ui::MainWindow *ui;
