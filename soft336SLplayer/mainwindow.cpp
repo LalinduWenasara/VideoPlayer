@@ -21,7 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
    mymediaPLayer->setVideoOutput(myVideowidget);
    myVideowidget->setGeometry(100,100,300,400);
    ui->verticalLayout->insertWidget(0,myVideowidget);
-
+/*
     connect(mymediaPLayer, &QMediaPlayer::positionChanged, [&](qint64 pos){
      ui->playProgress->setValue(pos);
 
@@ -31,15 +31,15 @@ MainWindow::MainWindow(QWidget *parent)
 
 
      dur1=durrr;
-   /*
+
 
      connect(this->mediaPlayer, &QMediaPlayer::durationChanged, this->currentContentSlider, &QSlider::setMaximum);
      connect(this->mediaPlayer, &QMediaPlayer::positionChanged, this, &MainWindow::positionChanged);
      connect(this->currentContentSlider, &QSlider::sliderMoved, this->mediaPlayer, &QMediaPlayer::setPosition);
 
-    */
 
-    });
+
+    }); */
   /*  connect(mymediaPLayer, &QMediaPlayer::durationChanged, [&](qint64 r){
      ui->positionSdr->setValue(r);
     });
