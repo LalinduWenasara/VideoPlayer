@@ -7,6 +7,8 @@
 #include <QKeyEvent>
 #include <QMouseEvent>
 
+
+
 int dur1;
 bool f1;
 
@@ -17,10 +19,29 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     mymediaPLayer= new QMediaPlayer(this);
     myVideowidget= new QVideoWidget(this);
+    mySlider=new QSlider(this);
+
+    mySlider->setStyleSheet("QSlider::groove:horizontal { background-color: transparent;height: 5px;; }QSlider {background-color: transparent; } QSlider::sub-page:horizontal {background-color: #41cd52;}QSlider::add-page:horizontal {background-color: #a9a9aa;}QSlider::handle:horizontal {background-color: #41cd52;width: 14px;margin-top: -6px;margin-bottom: -6px;border-radius: 3px;}QSlider::handle:horizontal:hover {background-color: #22af00;border-radius: 3px;}QSlider::sub-page:horizontal:disabled {background-color: #bbb;border-color: #999;}QSlider::add-page:horizontal:disabled {background-color: #eee;border-color: #999;}");
+
+
+
+    mySlider->setOrientation(Qt::Horizontal);
+
 
    mymediaPLayer->setVideoOutput(myVideowidget);
    myVideowidget->setGeometry(100,100,300,400);
    ui->verticalLayout->insertWidget(0,myVideowidget);
+   ui->verticalLayout->insertWidget(1,mySlider);
+
+
+
+   connect(this->mymediaPLayer, &QMediaPlayer::durationChanged, MainWindow::mySlider, &QSlider::setMaximum);
+   connect(this->mymediaPLayer, &QMediaPlayer::positionChanged, this, &MainWindow::mediaplayerPositionChanged);
+   connect(this->mySlider, &QSlider::sliderMoved, this->mymediaPLayer, &QMediaPlayer::setPosition);
+
+
+ }
+
 /*
     connect(mymediaPLayer, &QMediaPlayer::positionChanged, [&](qint64 pos){
      ui->playProgress->setValue(pos);
@@ -45,7 +66,20 @@ MainWindow::MainWindow(QWidget *parent)
     });
 */
 
-}
+/*
+
+   connect(this->mymediaPLayer, &QMediaPlayer::durationChanged, ui->positionSdr, &QSlider::setMaximum);
+   connect(this->mymediaPLayer, &QMediaPlayer::positionChanged,[&](qint64 pos){ui->positionSdr->setValue(pos);});
+   connect(ui->positionSdr, &QSlider::sliderMoved, this->mymediaPLayer, &QMediaPlayer::setPosition);
+
+*/
+
+
+
+
+//mymediaPLayer->duration()/100*value
+
+
 
 MainWindow::~MainWindow()
 {
@@ -53,6 +87,15 @@ MainWindow::~MainWindow()
 }
 
 
+
+void MainWindow::mediaplayerPositionChanged(qint64 position)
+{
+    this->mySlider->setValue(position);
+  //  this->updateDurationInfo();
+}
+
+
+/*
 void MainWindow::on_playBtn_clicked()
 {
 
@@ -67,11 +110,7 @@ void MainWindow::on_playBtn_clicked()
 
 
 }
-
-
-
-
-
+*/
 
 
 
@@ -121,7 +160,7 @@ void MainWindow::on_muteBtn_clicked()
 
 }
 
-
+/*
 
 void MainWindow::on_positionSdr_valueChanged(int value)
 {
@@ -129,7 +168,7 @@ void MainWindow::on_positionSdr_valueChanged(int value)
     mymediaPLayer->setPosition(mymediaPLayer->duration()/100*value);
 
 }
-
+*/
 
 
 

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1210</width>
-    <height>1102</height>
+    <height>677</height>
    </rect>
   </property>
   <property name="acceptDrops">
@@ -25,161 +25,199 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="3" column="0" colspan="4">
-     <widget class="QSlider" name="positionSdr">
-      <property name="styleSheet">
-       <string notr="true">QSlider 
-{
-	background-color: transparent;
-
-}
-
-QSlider::groove:horizontal 
-{
-	background-color: transparent;
-	height: 5px;
-
-}
-
-
-QSlider::sub-page:horizontal 
-{
-	background-color: #41cd52;
-
-}
-
-
-QSlider::add-page:horizontal 
-{
-	background-color: #a9a9aa;
-
-}
-
-
-QSlider::handle:horizontal 
-{
-	background-color: #41cd52;
-	width: 14px;
-	margin-top: -6px;
-	margin-bottom: -6px;
-	border-radius: 3px;
-
-}
-
-
-QSlider::handle:horizontal:hover 
-{
-	background-color: #22af00;
-	border-radius: 3px;
-
-}
-
-
-QSlider::sub-page:horizontal:disabled 
-{
-	background-color: #bbb;
-	border-color: #999;
-
-}
-
-
-QSlider::add-page:horizontal:disabled 
-{
-	background-color: #eee;
-	border-color: #999;
-
-}
-
-
-QSlider::handle:horizontal:disabled 
-{
-	background-color: #eee;
-	border: 1px solid #aaa;
-	border-radius: 3px;
-
-}
-
-
-QSlider::groove:vertical 
-{
-	background-color: transparent;
-	width: 5px;
-
-}
-
-
-QSlider::sub-page:vertical 
-{
-	background-color: #41cd52;
-
-}
-
-
-QSlider::add-page:vertical 
-{
-	background-color: #a9a9aa;
-
-}
-
-
-QSlider::handle:vertical 
-{
-	background-color: #41cd52;
-	height: 14px;
-	margin-left: -6px;
-	margin-right: -6px;
-	border-radius: 3px;
-
-}
-
-
-QSlider::handle:vertical:hover 
-{
-	background-color: #22af00;
-	border-radius: 3px;
-
-}
-
-
-QSlider::sub-page:vertical:disabled 
-{
-	background-color: #bbb;
-	border-color: #999;
-
-}
-
-
-QSlider::add-page:vertical:disabled 
-{
-	background-color: #eee;
-	border-color: #999;
-
-}
-
-
-QSlider::handle:vertical:disabled 
-{
-	background-color: #eee;
-	border: 1px solid #aaa;
-	border-radius: 3px;
-
-}</string>
+    <item row="3" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetDefaultConstraint</enum>
       </property>
-      <property name="minimum">
-       <number>0</number>
-      </property>
-      <property name="maximum">
-       <number>99</number>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
+      <item>
+       <widget class="QPushButton" name="openBtn">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #a80493;
+	color: #fff;
+	font-size: 11px;
+	font-weight: bold;
+	border: none;
+	border-radius: 25px;
+	padding: 5px;
+
+}
+
+
+QPushButton::disabled
+{
+	background-color: #5c5c5c;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #ff4747;
+
+}
+</string>
+        </property>
+        <property name="text">
+         <string>OPEN</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="playBtn2">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #a80493;
+	color: #fff;
+	font-size: 11px;
+	font-weight: bold;
+	border: none;
+	border-radius: 25px;
+	padding: 5px;
+
+}
+
+
+QPushButton::disabled
+{
+	background-color: #5c5c5c;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #ff4747;
+
+}
+</string>
+        </property>
+        <property name="text">
+         <string>PLAY</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="stopBtn">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #a80493;
+	color: #fff;
+	font-size: 11px;
+	font-weight: bold;
+	border: none;
+	border-radius: 25px;
+	padding: 5px;
+
+}
+
+
+QPushButton::disabled
+{
+	background-color: #5c5c5c;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #ff4747;
+
+}
+</string>
+        </property>
+        <property name="text">
+         <string>STOP</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pauseBtn">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #a80493;
+	color: #fff;
+	font-size: 11px;
+	font-weight: bold;
+	border: none;
+	border-radius: 25px;
+	padding: 5px;
+
+}
+
+
+QPushButton::disabled
+{
+	background-color: #5c5c5c;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #ff4747;
+
+}
+</string>
+        </property>
+        <property name="text">
+         <string>PAUSE</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="muteBtn">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: #a80493;
+	color: #fff;
+	font-size: 11px;
+	font-weight: bold;
+	border: none;
+	border-radius: 25px;
+	padding: 5px;
+
+}
+
+
+QPushButton::disabled
+{
+	background-color: #5c5c5c;
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #ff4747;
+
+}
+</string>
+        </property>
+        <property name="text">
+         <string>MUTE</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item row="0" column="0" rowspan="2" colspan="6">
      <layout class="QVBoxLayout" name="verticalLayout"/>
     </item>
-    <item row="3" column="5" rowspan="2">
+    <item row="3" column="3">
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Full Screen</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
      <widget class="QProgressBar" name="vprogress">
       <property name="palette">
        <palette>
@@ -420,197 +458,165 @@ QSlider::handle:vertical:disabled
        <bool>false</bool>
       </property>
       <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="3">
-     <widget class="QPushButton" name="pushButton">
-      <property name="text">
-       <string>Full Screen</string>
+       <enum>Qt::Horizontal</enum>
       </property>
      </widget>
     </item>
     <item row="4" column="1">
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QPushButton" name="openBtn">
-        <property name="styleSheet">
-         <string notr="true">QPushButton
+     <widget class="QSlider" name="positionSdr">
+      <property name="styleSheet">
+       <string notr="true">QSlider 
 {
-	background-color: #a80493;
-	color: #fff;
-	font-size: 11px;
-	font-weight: bold;
-	border: none;
-	border-radius: 25px;
-	padding: 5px;
+	background-color: transparent;
+
+}
+
+QSlider::groove:horizontal 
+{
+	background-color: transparent;
+	height: 5px;
 
 }
 
 
-QPushButton::disabled
+QSlider::sub-page:horizontal 
 {
-	background-color: #5c5c5c;
+	background-color: #41cd52;
 
 }
 
 
-QPushButton::pressed
+QSlider::add-page:horizontal 
 {
-	background-color: #ff4747;
-
-}
-</string>
-        </property>
-        <property name="text">
-         <string>OPEN</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="playBtn2">
-        <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-	background-color: #a80493;
-	color: #fff;
-	font-size: 11px;
-	font-weight: bold;
-	border: none;
-	border-radius: 25px;
-	padding: 5px;
+	background-color: #a9a9aa;
 
 }
 
 
-QPushButton::disabled
+QSlider::handle:horizontal 
 {
-	background-color: #5c5c5c;
+	background-color: #41cd52;
+	width: 14px;
+	margin-top: -6px;
+	margin-bottom: -6px;
+	border-radius: 3px;
 
 }
 
 
-QPushButton::pressed
+QSlider::handle:horizontal:hover 
 {
-	background-color: #ff4747;
-
-}
-</string>
-        </property>
-        <property name="text">
-         <string>PLAY</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="stopBtn">
-        <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-	background-color: #a80493;
-	color: #fff;
-	font-size: 11px;
-	font-weight: bold;
-	border: none;
-	border-radius: 25px;
-	padding: 5px;
+	background-color: #22af00;
+	border-radius: 3px;
 
 }
 
 
-QPushButton::disabled
+QSlider::sub-page:horizontal:disabled 
 {
-	background-color: #5c5c5c;
+	background-color: #bbb;
+	border-color: #999;
 
 }
 
 
-QPushButton::pressed
+QSlider::add-page:horizontal:disabled 
 {
-	background-color: #ff4747;
-
-}
-</string>
-        </property>
-        <property name="text">
-         <string>STOP</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pauseBtn">
-        <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-	background-color: #a80493;
-	color: #fff;
-	font-size: 11px;
-	font-weight: bold;
-	border: none;
-	border-radius: 25px;
-	padding: 5px;
+	background-color: #eee;
+	border-color: #999;
 
 }
 
 
-QPushButton::disabled
+QSlider::handle:horizontal:disabled 
 {
-	background-color: #5c5c5c;
+	background-color: #eee;
+	border: 1px solid #aaa;
+	border-radius: 3px;
 
 }
 
 
-QPushButton::pressed
+QSlider::groove:vertical 
 {
-	background-color: #ff4747;
-
-}
-</string>
-        </property>
-        <property name="text">
-         <string>PAUSE</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="muteBtn">
-        <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-	background-color: #a80493;
-	color: #fff;
-	font-size: 11px;
-	font-weight: bold;
-	border: none;
-	border-radius: 25px;
-	padding: 5px;
+	background-color: transparent;
+	width: 5px;
 
 }
 
 
-QPushButton::disabled
+QSlider::sub-page:vertical 
 {
-	background-color: #5c5c5c;
+	background-color: #41cd52;
 
 }
 
 
-QPushButton::pressed
+QSlider::add-page:vertical 
 {
-	background-color: #ff4747;
+	background-color: #a9a9aa;
 
 }
-</string>
-        </property>
-        <property name="text">
-         <string>MUTE</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
+
+
+QSlider::handle:vertical 
+{
+	background-color: #41cd52;
+	height: 14px;
+	margin-left: -6px;
+	margin-right: -6px;
+	border-radius: 3px;
+
+}
+
+
+QSlider::handle:vertical:hover 
+{
+	background-color: #22af00;
+	border-radius: 3px;
+
+}
+
+
+QSlider::sub-page:vertical:disabled 
+{
+	background-color: #bbb;
+	border-color: #999;
+
+}
+
+
+QSlider::add-page:vertical:disabled 
+{
+	background-color: #eee;
+	border-color: #999;
+
+}
+
+
+QSlider::handle:vertical:disabled 
+{
+	background-color: #eee;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+
+}</string>
+      </property>
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>99</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="tickPosition">
+       <enum>QSlider::NoTicks</enum>
+      </property>
+     </widget>
     </item>
-    <item row="3" column="4" rowspan="2">
+    <item row="3" column="2">
      <widget class="QSlider" name="volumeVerticalSlider">
       <property name="styleSheet">
        <string notr="true">QSlider 
@@ -752,7 +758,7 @@ QSlider::handle:vertical:disabled
 }</string>
       </property>
       <property name="orientation">
-       <enum>Qt::Vertical</enum>
+       <enum>Qt::Horizontal</enum>
       </property>
      </widget>
     </item>

@@ -8,11 +8,10 @@ namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
 
-
-
-
-class QMediaPlayer;//define a class name Qmediaplayer
+class QMediaPlayer;
+//define a class name Qmediaplayer
 class QVideoWidget;
+class QSlider;
 
 
 class MainWindow : public QMainWindow
@@ -24,7 +23,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_playBtn_clicked();
+  //  void on_playBtn_clicked();
 
     void on_openBtn_clicked();
 
@@ -37,16 +36,20 @@ private slots:
     void on_muteBtn_clicked();
 
 
-    void on_positionSdr_valueChanged(int value);
+   // void on_positionSdr_valueChanged(int value);
 
     void on_volumeVerticalSlider_valueChanged(int value);
 
     void on_pushButton_clicked();
     void mouseDoubleClickEvent(QMouseEvent* e);
 
+     void mediaplayerPositionChanged(qint64 position);
+
+
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *mymediaPLayer;
     QVideoWidget *myVideowidget;
+    QSlider *mySlider;
 };
 #endif // MAINWINDOW_H
