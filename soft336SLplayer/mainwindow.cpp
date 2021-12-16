@@ -32,7 +32,7 @@ MainWindow::MainWindow(QWidget *parent)
    myVideowidget->setGeometry(100,100,300,400);
    ui->verticalLayout->insertWidget(0,myVideowidget);
    ui->verticalLayout->insertWidget(1,mySlider);
-
+   ui->pushButton->setIcon(QIcon(":/img/ic2.png"));
 
 
    connect(this->mymediaPLayer, &QMediaPlayer::durationChanged, MainWindow::mySlider, &QSlider::setMaximum);
