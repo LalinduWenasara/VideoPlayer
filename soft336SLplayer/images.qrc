@@ -3,5 +3,19 @@
     <qresource prefix="/">
         <file>img/ic2.png</file>
         <file>img/heart.png</file>
+        <file>img/yellow/all.png</file>
+        <file>img/yellow/f2.png</file>
+        <file>img/yellow/full.png</file>
+        <file>img/yellow/mute.png</file>
+        <file>img/yellow/pause.png</file>
+        <file>img/yellow/play.png</file>
+        <file>img/yellow/s1.png</file>
+        <file>img/yellow/s2.png</file>
+        <file>img/yellow/se1.png</file>
+        <file>img/yellow/see2.png</file>
+        <file>img/yellow/setting.png</file>
+        <file>img/yellow/stop.png</file>
+        <file>img/yellow/U1.png</file>
+        <file>img/yellow/U2.png</file>
     </qresource>
 </RCC>

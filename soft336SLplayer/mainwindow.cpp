@@ -32,7 +32,29 @@ MainWindow::MainWindow(QWidget *parent)
    myVideowidget->setGeometry(100,100,300,400);
    ui->verticalLayout->insertWidget(0,myVideowidget);
    ui->verticalLayout->insertWidget(1,mySlider);
-   ui->pushButton->setIcon(QIcon(":/img/ic2.png"));
+   ui->pushButton->setIcon(QIcon(":/img/yellow/full.png"));
+   ui->playBtn2->setIcon(QIcon(":/img/yellow/play.png"));
+   ui->stopBtn->setIcon(QIcon(":/img/yellow/setting.png"));
+   ui->stopBtn->setIcon(QIcon(":/img/yellow/pause.png"));
+   ui->muteBtn->setIcon(QIcon(":/img/yellow/mute.png"));
+   ui->openBtn->setIcon(QIcon(":/img/yellow/all.png"));
+
+   ui->stopbtn2->setIcon(QIcon(":/img/yellow/setting.png"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
    connect(this->mymediaPLayer, &QMediaPlayer::durationChanged, MainWindow::mySlider, &QSlider::setMaximum);
