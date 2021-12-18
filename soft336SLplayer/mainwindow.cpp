@@ -34,8 +34,8 @@ MainWindow::MainWindow(QWidget *parent)
    ui->verticalLayout->insertWidget(1,mySlider);
    ui->pushButton->setIcon(QIcon(":/img/yellow/full.png"));
    ui->playBtn2->setIcon(QIcon(":/img/yellow/play.png"));
-   ui->stopBtn->setIcon(QIcon(":/img/yellow/setting.png"));
-   ui->stopBtn->setIcon(QIcon(":/img/yellow/pause.png"));
+   ui->stopBtn->setIcon(QIcon(":/img/yellow/stop.png"));
+   ui->pauseBtn->setIcon(QIcon(":/img/yellow/pause.png"));
    ui->muteBtn->setIcon(QIcon(":/img/yellow/mute.png"));
    ui->openBtn->setIcon(QIcon(":/img/yellow/all.png"));
 

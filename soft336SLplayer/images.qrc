@@ -1,8 +1,6 @@
 <RCC>
     <qresource prefix="/img"/>
     <qresource prefix="/">
-        <file>img/ic2.png</file>
-        <file>img/heart.png</file>
         <file>img/yellow/all.png</file>
         <file>img/yellow/f2.png</file>
         <file>img/yellow/full.png</file>
@@ -17,5 +15,6 @@
         <file>img/yellow/stop.png</file>
         <file>img/yellow/U1.png</file>
         <file>img/yellow/U2.png</file>
+        <file>img/sb.ico</file>
     </qresource>
 </RCC>

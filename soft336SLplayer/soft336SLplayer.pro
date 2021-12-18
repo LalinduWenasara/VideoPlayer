@@ -28,3 +28,6 @@ DISTFILES +=
 
 RESOURCES += \
     images.qrc
+
+
+RC_ICONS = img/sb.ico
