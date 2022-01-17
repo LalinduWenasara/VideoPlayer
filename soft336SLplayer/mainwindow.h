@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QDialog>
+#include "settingsdialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -44,12 +46,20 @@ private slots:
     void mouseDoubleClickEvent(QMouseEvent* e);
 
      void mediaplayerPositionChanged(qint64 position);
+     void on_stopbtn2_clicked();
 
+     void timeupdate();
 
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *mymediaPLayer;
-    QVideoWidget *myVideowidget;
+   // QVideoWidget *myVideowidget;
     QSlider *mySlider;
+public:
+     QVideoWidget *myVideowidget;
+
 };
+
+
+
 #endif // MAINWINDOW_H

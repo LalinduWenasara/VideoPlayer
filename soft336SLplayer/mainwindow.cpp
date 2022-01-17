@@ -6,11 +6,13 @@
 #include <QVideoWidget>
 #include <QKeyEvent>
 #include <QMouseEvent>
-
+#include <QTime>
 
 
 int dur1;
 bool f1;
+bool a=false;
+bool playstatus=false;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -22,9 +24,6 @@ MainWindow::MainWindow(QWidget *parent)
     mySlider=new QSlider(this);
 
     mySlider->setStyleSheet("QSlider::groove:horizontal { background-color: transparent;height: 5px;; }QSlider {background-color: transparent; } QSlider::sub-page:horizontal {background-color: #41cd52;}QSlider::add-page:horizontal {background-color: #a9a9aa;}QSlider::handle:horizontal {background-color: #41cd52;width: 14px;margin-top: -6px;margin-bottom: -6px;border-radius: 3px;}QSlider::handle:horizontal:hover {background-color: #22af00;border-radius: 3px;}QSlider::sub-page:horizontal:disabled {background-color: #bbb;border-color: #999;}QSlider::add-page:horizontal:disabled {background-color: #eee;border-color: #999;}");
-
-
-
     mySlider->setOrientation(Qt::Horizontal);
 
 
@@ -35,26 +34,9 @@ MainWindow::MainWindow(QWidget *parent)
    ui->pushButton->setIcon(QIcon(":/img/yellow/full.png"));
    ui->playBtn2->setIcon(QIcon(":/img/yellow/play.png"));
    ui->stopBtn->setIcon(QIcon(":/img/yellow/stop.png"));
-   ui->pauseBtn->setIcon(QIcon(":/img/yellow/pause.png"));
-   ui->muteBtn->setIcon(QIcon(":/img/yellow/mute.png"));
+   ui->muteBtn->setIcon(QIcon(":/img/yellow/s2.png"));
    ui->openBtn->setIcon(QIcon(":/img/yellow/all.png"));
-
    ui->stopbtn2->setIcon(QIcon(":/img/yellow/setting.png"));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
    connect(this->mymediaPLayer, &QMediaPlayer::durationChanged, MainWindow::mySlider, &QSlider::setMaximum);
@@ -64,42 +46,27 @@ MainWindow::MainWindow(QWidget *parent)
 
  }
 
-/*
-    connect(mymediaPLayer, &QMediaPlayer::positionChanged, [&](qint64 pos){
-     ui->playProgress->setValue(pos);
-
-    });
-    connect(mymediaPLayer, &QMediaPlayer::durationChanged, [&](qint64 durrr){
-     ui->playProgress->setMaximum(durrr);
 
 
-     dur1=durrr;
+void MainWindow::timeupdate()
+{
+    const qint64 currentInfo = mymediaPLayer->position()/1000;
+    const qint64 duration = mymediaPLayer->duration()/1000;
+    QString timestring;
+
+    if (currentInfo)
+    {
+        QTime cTime((currentInfo / 3600) %60,(currentInfo / 60) % 60,(currentInfo % 60),(currentInfo * 1000) % 1000);
+        QTime tTime((duration / 3600) % 60,(duration / 60) % 60,(duration % 60),(duration * 1000) % 1000);
+        QString format = "mm:ss";
+        if (duration > 3600)format = "hh:mm:ss";
+        timestring = cTime.toString(format) + " || " + tTime.toString(format);
+    }
+
+    ui->timeLbl->setText(timestring);
+}
 
 
-     connect(this->mediaPlayer, &QMediaPlayer::durationChanged, this->currentContentSlider, &QSlider::setMaximum);
-     connect(this->mediaPlayer, &QMediaPlayer::positionChanged, this, &MainWindow::positionChanged);
-     connect(this->currentContentSlider, &QSlider::sliderMoved, this->mediaPlayer, &QMediaPlayer::setPosition);
-
-
-
-    }); */
-  /*  connect(mymediaPLayer, &QMediaPlayer::durationChanged, [&](qint64 r){
-     ui->positionSdr->setValue(r);
-    });
-*/
-
-/*
-
-   connect(this->mymediaPLayer, &QMediaPlayer::durationChanged, ui->positionSdr, &QSlider::setMaximum);
-   connect(this->mymediaPLayer, &QMediaPlayer::positionChanged,[&](qint64 pos){ui->positionSdr->setValue(pos);});
-   connect(ui->positionSdr, &QSlider::sliderMoved, this->mymediaPLayer, &QMediaPlayer::setPosition);
-
-*/
-
-
-
-
-//mymediaPLayer->duration()/100*value
 
 
 
@@ -113,26 +80,10 @@ MainWindow::~MainWindow()
 void MainWindow::mediaplayerPositionChanged(qint64 position)
 {
     this->mySlider->setValue(position);
+    this->timeupdate();
   //  this->updateDurationInfo();
 }
 
-
-/*
-void MainWindow::on_playBtn_clicked()
-{
-
-  QMediaPlayer* player=new QMediaPlayer;
-        QVideoWidget* videowidget=new QVideoWidget;
-
-        player->setVideoOutput(videowidget);
-        player->setMedia(QUrl::fromLocalFile("C:/Users/lalin/Downloads/ʜawkeye.mkv"));
-        videowidget->setGeometry(100,100,300,400);
-        videowidget->show();
-        player->play();
-
-
-}
-*/
 
 
 
@@ -152,7 +103,20 @@ void MainWindow::on_openBtn_clicked()
 
 void MainWindow::on_playBtn2_clicked()
 {
-    mymediaPLayer->play();
+
+    if(playstatus == false){
+        playstatus=true;
+        mymediaPLayer->play();
+
+        ui->playBtn2->setIcon(QIcon(":/img/yellow/pause.png"));
+    }
+    else{
+        playstatus=false;
+        mymediaPLayer->pause();
+      //  ui->muteBtn->setText("Mute");
+          ui->playBtn2->setIcon(QIcon(":/img/yellow/play.png"));
+
+    }
 }
 
 
@@ -171,26 +135,23 @@ void MainWindow::on_pauseBtn_clicked()
 
 void MainWindow::on_muteBtn_clicked()
 {
-    if(ui->muteBtn->text()=="Mute"){
+
+
+    if(a == false){
+        a=true;
         mymediaPLayer->setMuted(true);
-        ui->muteBtn->setText("Unmute");
+        ui->muteBtn->setIcon(QIcon(":/img/yellow/mute.png"));
+
     }
     else{
+        a=false;
         mymediaPLayer->setMuted(false);
-        ui->muteBtn->setText("Mute");
+        ui->muteBtn->setIcon(QIcon(":/img/yellow/s2.png"));
     }
 
-}
-
-/*
-
-void MainWindow::on_positionSdr_valueChanged(int value)
-{
-
-    mymediaPLayer->setPosition(mymediaPLayer->duration()/100*value);
 
 }
-*/
+
 
 
 
@@ -198,6 +159,15 @@ void MainWindow::on_positionSdr_valueChanged(int value)
 void MainWindow::on_volumeVerticalSlider_valueChanged(int value)
 {
     mymediaPLayer->setVolume(value);
+
+    if(value<50){
+        ui->muteBtn->setIcon(QIcon(":/img/yellow/s2.png"));
+    }
+    if(value<100 and value >50){
+        ui->muteBtn->setIcon(QIcon(":/img/yellow/s1.png"));
+    }
+   // myVideowidget->setContrast(value);
+
 }
 
 
@@ -220,6 +190,17 @@ void MainWindow::keyPressEvent( QKeyEvent * event )
 void MainWindow::mouseDoubleClickEvent(QMouseEvent* )
 {
 
-     myVideowidget->setFullScreen(false);
+ myVideowidget->setFullScreen(true);
+    // myVideowidget->setFullScreen(false);
+
 
 }
+
+
+void MainWindow::on_stopbtn2_clicked()
+{
+    //With Parent
+    settingsdialog *test1=new settingsdialog(this);
+    test1->show();
+}
+

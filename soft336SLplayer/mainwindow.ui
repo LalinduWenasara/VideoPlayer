@@ -28,8 +28,8 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="3" column="8">
-     <widget class="QPushButton" name="stopbtn2">
+    <item row="3" column="10">
+     <widget class="QPushButton" name="pushButton_2">
       <property name="styleSheet">
        <string notr="true">QPushButton
 {
@@ -64,7 +64,23 @@ QPushButton::pressed
       </property>
      </widget>
     </item>
-    <item row="3" column="10">
+    <item row="0" column="0" rowspan="2" colspan="13">
+     <layout class="QVBoxLayout" name="verticalLayout"/>
+    </item>
+    <item row="3" column="6">
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="3" column="11">
      <widget class="QPushButton" name="pushButton">
       <property name="styleSheet">
        <string notr="true">QPushButton
@@ -112,161 +128,79 @@ QPushButton::pressed
       </property>
      </widget>
     </item>
-    <item row="0" column="0" rowspan="2" colspan="12">
-     <layout class="QVBoxLayout" name="verticalLayout"/>
-    </item>
-    <item row="3" column="2">
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <property name="sizeConstraint">
-       <enum>QLayout::SetDefaultConstraint</enum>
-      </property>
-      <item>
-       <widget class="QPushButton" name="openBtn">
-        <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-
-	color: #fff;
-	font-size: 11px;
-	font-weight: bold;
-	border: none;
-	border-radius: 25px;
-	padding: 5px;
-
-}
-
-
-QPushButton::disabled
-{
-	
-
-
-}
-
-
-QPushButton::pressed
-{
-	background-color: #ff4747;
-
-}
-</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="playBtn2">
-        <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-
-	color: #fff;
-	font-size: 11px;
-	font-weight: bold;
-	border: none;
-	border-radius: 25px;
-	padding: 5px;
-
-}
-
-
-QPushButton::disabled
-{
-	
-
-
-}
-
-
-QPushButton::pressed
-{
-	background-color: #ff4747;
-
-}
-</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="stopBtn">
-        <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-
-	color: #fff;
-	font-size: 11px;
-	font-weight: bold;
-	border: none;
-	border-radius: 25px;
-	padding: 5px;
-
-}
-
-
-QPushButton::disabled
-{
-	
-
-
-}
-
-
-QPushButton::pressed
-{
-	background-color: #ff4747;
-
-}
-</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pauseBtn">
-        <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-
-	color: #fff;
-	font-size: 11px;
-	font-weight: bold;
-	border: none;
-	border-radius: 25px;
-	padding: 5px;
-
-}
-
-
-QPushButton::disabled
-{
-	
-
-
-}
-
-
-QPushButton::pressed
-{
-	background-color: #ff4747;
-
-}
-</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
     <item row="3" column="7">
+     <widget class="QPushButton" name="muteBtn">
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+
+	color: #fff;
+	font-size: 11px;
+	font-weight: bold;
+	border: none;
+	border-radius: 25px;
+	padding: 5px;
+
+}
+
+
+QPushButton::disabled
+{
+	
+
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #ff4747;
+
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="9">
+     <widget class="QPushButton" name="stopbtn2">
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+
+	color: #fff;
+	font-size: 11px;
+	font-weight: bold;
+	border: none;
+	border-radius: 25px;
+	padding: 5px;
+
+}
+
+
+QPushButton::disabled
+{
+	
+
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #ff4747;
+
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="8">
      <widget class="QSlider" name="volumeVerticalSlider">
       <property name="styleSheet">
        <string notr="true">QSlider 
@@ -411,19 +345,6 @@ QSlider::handle:vertical:disabled
       </property>
      </widget>
     </item>
-    <item row="3" column="5">
-     <spacer name="horizontalSpacer_2">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
     <item row="3" column="3">
      <spacer name="horizontalSpacer_3">
       <property name="orientation">
@@ -437,78 +358,6 @@ QSlider::handle:vertical:disabled
       </property>
      </spacer>
     </item>
-    <item row="3" column="9">
-     <widget class="QPushButton" name="pushButton_2">
-      <property name="styleSheet">
-       <string notr="true">QPushButton
-{
-
-	color: #fff;
-	font-size: 11px;
-	font-weight: bold;
-	border: none;
-	border-radius: 25px;
-	padding: 5px;
-
-}
-
-
-QPushButton::disabled
-{
-	
-
-
-}
-
-
-QPushButton::pressed
-{
-	background-color: #ff4747;
-
-}
-</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="6">
-     <widget class="QPushButton" name="muteBtn">
-      <property name="styleSheet">
-       <string notr="true">QPushButton
-{
-
-	color: #fff;
-	font-size: 11px;
-	font-weight: bold;
-	border: none;
-	border-radius: 25px;
-	padding: 5px;
-
-}
-
-
-QPushButton::disabled
-{
-	
-
-
-}
-
-
-QPushButton::pressed
-{
-	background-color: #ff4747;
-
-}
-</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
     <item row="3" column="4">
      <spacer name="horizontalSpacer">
       <property name="orientation">
@@ -521,6 +370,151 @@ QPushButton::pressed
        </size>
       </property>
      </spacer>
+    </item>
+    <item row="3" column="2">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetDefaultConstraint</enum>
+      </property>
+      <item>
+       <widget class="QPushButton" name="openBtn">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+
+	color: #fff;
+	font-size: 11px;
+	font-weight: bold;
+	border: none;
+	border-radius: 25px;
+	padding: 5px;
+
+}
+
+
+QPushButton::disabled
+{
+	
+
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #ff4747;
+
+}
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="playBtn2">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+
+	color: #fff;
+	font-size: 11px;
+	font-weight: bold;
+	border: none;
+	border-radius: 25px;
+	padding: 5px;
+
+}
+
+
+QPushButton::disabled
+{
+	
+
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #ff4747;
+
+}
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="stopBtn">
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+
+	color: #fff;
+	font-size: 11px;
+	font-weight: bold;
+	border: none;
+	border-radius: 25px;
+	padding: 5px;
+
+}
+
+
+QPushButton::disabled
+{
+	
+
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: #ff4747;
+
+}
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="3" column="5">
+     <widget class="QLabel" name="timeLbl">
+      <property name="minimumSize">
+       <size>
+        <width>150</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>13</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #fff;
+	font-size: 11px;
+	font-weight: bold;
+	border: none;
+	border-radius: 25px;
+	padding: 5px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="margin">
+       <number>2</number>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
