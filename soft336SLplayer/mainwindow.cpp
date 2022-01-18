@@ -37,6 +37,7 @@ MainWindow::MainWindow(QWidget *parent)
 
    mymediaPLayer->setVideoOutput(myVideowidget);
    myVideowidget->setGeometry(100,100,300,400);
+
    ui->verticalLayout->insertWidget(0,myVideowidget);
    ui->verticalLayout->insertWidget(1,mySlider);
    ui->pushButton->setIcon(QIcon(":/img/yellow/full.png"));
@@ -174,7 +175,7 @@ void MainWindow::timeupdate()
 
 
 
-
+//change normal size to full screen
 
 void MainWindow::on_pushButton_clicked()
 {
@@ -182,35 +183,26 @@ void MainWindow::on_pushButton_clicked()
    // f1=true;
 }
 
-/*
+//shortcut keys
 void MainWindow::keyPressEvent( QKeyEvent * event )
 {
-    if( event->key() == Qt::Key_A )
+    if( event->key() == Qt::Key_Space )
     {
-        // do your stuff here
+        on_playBtn2_clicked();
     }
-}*/
+    if( event->key() == Qt::Key_M )
+    {
+        on_muteBtn_clicked();
+    }
+}
 
-
+//allow to use full screen
 void MainWindow::mouseDoubleClickEvent(QMouseEvent* )
 {
 
 myVideowidget->showNormal();
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -221,18 +213,18 @@ void MainWindow::on_settingsbtn_clicked()
     test1->show();
 }
 
-
+//change video widget to full screen
 void MainWindow::showFullScreen()
 {
     myVideowidget->setFullScreen(true);
 
 }
-
+//change video widget to full screen
 void MainWindow::enterF()
 {
     myVideowidget->setFullScreen(true);
 }
-
+//change video widget to normal
 void MainWindow::exitF()
 {
     myVideowidget->setFullScreen(false);
