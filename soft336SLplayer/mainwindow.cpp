@@ -40,6 +40,7 @@ MainWindow::MainWindow(QWidget *parent)
 
    ui->verticalLayout->insertWidget(0,myVideowidget);
    ui->verticalLayout->insertWidget(1,mySlider);
+   //add icons to the buttons
    ui->pushButton->setIcon(QIcon(":/img/yellow/full.png"));
    ui->playBtn2->setIcon(QIcon(":/img/yellow/play.png"));
    ui->stopBtn->setIcon(QIcon(":/img/yellow/stop.png"));
