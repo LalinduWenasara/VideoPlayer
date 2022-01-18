@@ -5,6 +5,9 @@
 #include <QDialog>
 #include "settingsdialog.h"
 
+#include "customvwidget.h"
+
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -23,6 +26,9 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void showFullScreen();
+    void enterF();
+    void exitF();
 
 private slots:
   //  void on_playBtn_clicked();
@@ -33,7 +39,7 @@ private slots:
 
     void on_stopBtn_clicked();
 
-    void on_pauseBtn_clicked();
+
 
     void on_muteBtn_clicked();
 
@@ -46,17 +52,21 @@ private slots:
     void mouseDoubleClickEvent(QMouseEvent* e);
 
      void mediaplayerPositionChanged(qint64 position);
-     void on_stopbtn2_clicked();
+
 
      void timeupdate();
+
+     void on_settingsbtn_clicked();
 
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *mymediaPLayer;
    // QVideoWidget *myVideowidget;
     QSlider *mySlider;
+
 public:
-     QVideoWidget *myVideowidget;
+    // QVideoWidget *myVideowidget;
+     customVWidget *myVideowidget;
 
 };
 

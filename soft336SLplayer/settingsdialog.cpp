@@ -20,8 +20,6 @@ void settingsdialog::on_horizontalSlider_valueChanged(int value)
   QString v1= QString::number(value);
   ui->label1->setText(v1);
 
-  //MainWindow.myvideoplayer
-  //myVideowidget->setContrast(value);
 
 }
 

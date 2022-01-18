@@ -165,7 +165,7 @@ QPushButton::pressed
      </widget>
     </item>
     <item row="3" column="9">
-     <widget class="QPushButton" name="stopbtn2">
+     <widget class="QPushButton" name="settingsbtn">
       <property name="styleSheet">
        <string notr="true">QPushButton
 {
