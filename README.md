@@ -1,6 +1,6 @@
 # VideoPlayer
 VideoPlayer using qt
-[S.P.L.W.Sudasingha-10707381-SOFT336SL.pdf](https://github.com/LalinduWenasara/VideoPlayer/files/8954821/S.P.L.W.Sudasingha-10707381-SOFT336SL.pdf)
+
 ![0ff8e041644e4d11af99a626aa0287bb-0001](https://user-images.githubusercontent.com/49421049/174955603-8d5d21dc-3bbb-4095-b2e8-07aba3245234.jpg)
 ![0ff8e041644e4d11af99a626aa0287bb-0002](https://user-images.githubusercontent.com/49421049/174955620-e09ba3ba-b77e-4b7b-9da9-6fdde64b322a.jpg)
 ![0ff8e041644e4d11af99a626aa0287bb-0003](https://user-images.githubusercontent.com/49421049/174955632-77fa39d1-ad07-4657-b8c5-eb49db27bcfc.jpg)
